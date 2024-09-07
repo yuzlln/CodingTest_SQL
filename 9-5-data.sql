@@ -67,7 +67,7 @@ SELECT *
 FROM monthly_amount
 ORDER BY year
 	, month)
--- (4) 마지막으로 2015년 데이터만 압출
+-- (4) 마지막으로 2015년 데이터만 압출 ㅎ
 SELECT CONCAT(year, '-', month) AS 'year_month'
 	, amount
     , agg_amount
