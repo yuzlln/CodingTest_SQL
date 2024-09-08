@@ -3,7 +3,7 @@ SELECT months * salary AS earnings
     , COUNT(*) AS cnt
 FROM employee
 WHERE months * salary = (SELECT MAX(months * salary)
-						 FROM employee
+			 FROM employee
                          )
 GROUP BY earnings;
 
