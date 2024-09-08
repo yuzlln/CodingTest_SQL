@@ -7,6 +7,7 @@ HAVING animal_type IN ('Dog', 'Cat')
 ORDER BY animal_type;
 
 
+
 -- 방법 2) WHERE절
 SELECT animal_type
     , COUNT(*) AS count
