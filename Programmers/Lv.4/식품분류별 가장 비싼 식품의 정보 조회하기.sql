@@ -12,6 +12,7 @@ WHERE (category, price) IN (SELECT category
 ORDER BY max_price DESC;
 
 
+
 -- 방법 2) Window Function
 SELECT category
     , price AS max_price
