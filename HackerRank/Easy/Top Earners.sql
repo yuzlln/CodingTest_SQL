@@ -8,6 +8,7 @@ WHERE months * salary = (SELECT MAX(months * salary)
 GROUP BY earnings;
 
 
+
 -- 방법 2) HAVING절 서브쿼리
 SELECT months * salary AS earnings
     , COUNT(*) AS cnt
