@@ -6,7 +6,7 @@ FROM (SELECT user_id
       FROM online_sale
       GROUP BY user_id
           , product_id
-     ) AS t
+      ) AS t
 WHERE cnt >= 2
 ORDER BY user_id
     , product_id DESC;
