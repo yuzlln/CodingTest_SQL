@@ -6,6 +6,7 @@ WITH high_earner AS (
     FROM employee AS e
         LEFT JOIN department AS d ON e.departmentid = d.id
 )
+    
 SELECT Department
     , Employee
     , Salary
