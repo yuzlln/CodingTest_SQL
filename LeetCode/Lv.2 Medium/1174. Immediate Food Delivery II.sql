@@ -13,6 +13,5 @@ WITH first_order AS (
                                         )    
 )
 
-
 SELECT ROUND(100 * SUM(immediate) / COUNT(*), 2) AS immediate_percentage
 FROM first_order_immediate_flag;
