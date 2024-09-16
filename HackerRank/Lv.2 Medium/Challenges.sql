@@ -1,4 +1,4 @@
-	WITH count AS ( -- hacker_id별 challenges 개수
+WITH count AS ( -- hacker_id별 challenges 개수
     SELECT hacker_id
         , COUNT(*) AS challenges_created
     FROM challenges
