@@ -24,3 +24,19 @@ FROM employee AS e
                 ) AS eh ON e.departmentid = eh.departmentid
                             AND e.salary = eh.max_salary
     INNER JOIN department AS d ON e.departmentid = d.id;
+
+
+
+-- 방법 3) Window Function
+WITH employee_max AS (
+    SELECT *
+        , MAX(salary) OVER(PARTITION BY departmentId) AS max_salary
+    FROM employee
+)
+
+SELECT d.name AS Department
+    , e.name AS Employee
+    , e.salary AS Salary
+FROM employee_max AS e
+    INNER JOIN department AS d ON e.departmentId = d.id
+WHERE e.salary = e.max_salary;
