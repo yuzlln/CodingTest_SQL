@@ -13,9 +13,9 @@ WHERE id IN (SELECT id
 -- 방법 2) FROM절 서브쿼리
 DELETE FROM person
 WHERE id NOT IN (SELECT sub.min_id
-				 FROM (SELECT email
-					       , MIN(id) as min_id
-					   FROM person
-					   GROUP BY email
-					   ) AS sub
-			    );
+		 FROM (SELECT email
+		           , MIN(id) as min_id
+		       FROM person
+		       GROUP BY email
+		       ) AS sub
+		);
