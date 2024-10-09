@@ -14,3 +14,10 @@ WHERE NOT (city LIKE 'a%'
             OR city LIKE 'o%'
             OR city LIKE 'u%'
            );
+
+
+
+-- 방법 3) 정규 표현식
+SELECT DISTINCT city
+FROM station
+WHERE city NOT REGEXP '^[aeiou].*';
