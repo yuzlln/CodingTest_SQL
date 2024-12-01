@@ -17,7 +17,7 @@ WITH user_rating AS ( -- user별 평점을 남긴 영화수
                       WHERE cnt = (SELECT *
                                    FROM max_rating
                                    )
-                    )
+                     )
     ORDER BY results
     LIMIT 1
 )
