@@ -13,12 +13,12 @@ SELECT hacker_id
     , challenges_created
 FROM count
 WHERE challenges_created = (SELECT MAX(challenges_created) -- challenges_created가 max인 데이터와
-                             FROM count
+                            FROM count
                             )
     OR challenges_created IN (SELECT challenges_created -- cahllenges_created가 1개인 데이터
                               FROM count
                               GROUP BY challenges_created
                               HAVING COUNT(*) = 1
-                             )
+                              )
 ORDER BY challenges_created DESC
     , hacker_id;
