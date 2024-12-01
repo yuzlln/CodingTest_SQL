@@ -1,7 +1,7 @@
 WITH projectgroups AS (
     SELECT *
-		    -- DATE_SUB(date, INTERVAL n DAY) : date에서 n일을 빼기
-				-- 연속된 날짜를 가진 행은 동일한 결과
+	-- DATE_SUB(date, INTERVAL n DAY) : date에서 n일을 빼기
+	-- 연속된 날짜를 가진 행은 동일한 결과
         , DATE_SUB(start_date, INTERVAL ROW_NUMBER() OVER(ORDER BY start_date) DAY) AS project_id
     FROM projects
 )
